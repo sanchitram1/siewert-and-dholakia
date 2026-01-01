@@ -65,3 +65,4 @@ TEST-results.xml
 /lib/
 .firebase
 ISSUES.md
+dist/
