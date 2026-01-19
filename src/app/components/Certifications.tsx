@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Award, ShieldCheck, Leaf, CheckSquare } from 'lucide-react';
+import { Award, ShieldCheck, Leaf } from 'lucide-react';
 
 export function Certifications() {
   const certs = [
@@ -8,11 +8,11 @@ export function Certifications() {
       icon: <ShieldCheck className="w-8 h-8 text-[#C05621]" />,
       desc: 'Food Safety Management System',
     },
-    {
-      name: 'GMP Certified',
-      icon: <CheckSquare className="w-8 h-8 text-[#C05621]" />,
-      desc: 'Good Manufacturing Practices',
-    },
+    // {
+    //   name: 'GMP Certified',
+    //   icon: <CheckSquare className="w-8 h-8 text-[#C05621]" />,
+    //   desc: 'Good Manufacturing Practices',
+    // },
     {
       name: 'Rainforest Alliance',
       icon: <Leaf className="w-8 h-8 text-[#C05621]" />,
@@ -54,7 +54,7 @@ export function Certifications() {
 
           {/* Right Side: Certification Grid (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-[#4A5D23]/10">
+            <div className="flex flex-col md:flex-row md:items-stretch gap-6">
               {certs.map((cert, idx) => (
                 <motion.div
                   key={idx}
@@ -63,7 +63,7 @@ export function Certifications() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   whileHover={{ backgroundColor: '#F9F8F4' }}
-                  className="p-10 border-r border-b border-[#4A5D23]/10 flex flex-col gap-6 group transition-colors"
+                  className="flex-1 p-10 border border-[#4A5D23]/10 rounded-2xl flex flex-col gap-6 group transition-colors"
                 >
                   <div className="bg-[#F9F8F4] w-fit p-3 rounded-full group-hover:bg-white transition-colors">
                     {cert.icon}
